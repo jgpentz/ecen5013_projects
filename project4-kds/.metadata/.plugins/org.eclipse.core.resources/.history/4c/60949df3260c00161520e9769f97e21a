@@ -12,7 +12,7 @@ int main(void)
 
 	spi_init();
 
-	config_stuff = NORDIC_PWR_UP | NORDIC_PRIM_RX;
+	config_stuff = (uint8_t *)NORDIC_PWR_UP | NORDIC_PRIM_RX;
 
 	//spi_send_byte(ch);
 	//spi_receive_byte(&ch);
