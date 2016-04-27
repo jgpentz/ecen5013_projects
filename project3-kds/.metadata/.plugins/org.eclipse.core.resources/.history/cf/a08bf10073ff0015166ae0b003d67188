@@ -1,0 +1,18 @@
+/*
+ * log.h
+ *
+ *  Created on: Apr 9, 2016
+ *      Author: jimmy
+ */
+
+#ifndef SOURCES_LOG_H_
+#define SOURCES_LOG_H_
+
+#include "MKL25Z4.h"
+
+void LOG_0(uint8_t * str, uint32_t length);
+void UlToStr(char *s, unsigned long bin, unsigned char n);
+
+
+
+#endif /* SOURCES_LOG_H_ */

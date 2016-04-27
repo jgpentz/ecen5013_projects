@@ -1,0 +1,13 @@
+/*
+ * dma.c
+ *
+ *  Created on: Mar 13, 2016
+ *      Author: jimmy
+ */
+
+
+void dma_init(){
+	// enable clock to dma mux
+	SIM_SCGC6 |= SIM_SCGC6_DMAMUX_MASK;
+
+}

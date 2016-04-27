@@ -1,0 +1,29 @@
+/*
+ * timer.c
+ *
+ *  Created on: Feb 28, 2016
+ *      Author: jimmy
+ */
+
+#include "timer.h"
+#include "MKL25Z4.h"
+
+void timer_init(){
+	// Set clock to use ext osc
+	MCG_C1 |= MCG_C1_CLKS(2);
+
+	// Enable TPM clk and set to use 8MHz osc
+	SIM_SCGC6 |= SIM_SCGC6_TPM2_MASK;
+	SIM_SOPT2 |= SIM_SOPT2_TPMSRC(2);
+
+	// Configure TPM
+	TPM2_BASE_PTR->SC = TPM_SC_CMOD(2) | TPM_SC_PS(7);
+
+	// Set modulo
+	TPM2_BASE_PTR->MOD = 0xF423;
+
+
+	// Enable interrupt
+	TPM2_SC |= TPM_SC_TOIE_MASK;
+	NVIC;
+}

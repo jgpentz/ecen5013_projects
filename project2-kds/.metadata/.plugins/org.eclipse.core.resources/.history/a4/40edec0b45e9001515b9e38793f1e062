@@ -1,0 +1,33 @@
+/*
+ * profiler.c
+ *
+ *  Created on: Mar 13, 2016
+ *      Author: jimmy
+ */
+#include "profiler.h"
+
+uint8_t a[10];
+uint8_t ai[10];
+uint8_t b[100];
+uint8_t bi[100];
+uint8_t c[1000];
+uint8_t ci[1000];
+uint8_t d[5000];
+uint8_t di[5000];
+uint8_t * ptr1;
+uint8_t * ptr2;
+uint8_t error;
+int i;
+
+volatile uint8_t micro_seconds = 0;
+
+uint8_t profiler(){
+	for(i = 0; i < 100; i++){
+		d[i] = 0xaa;
+	}
+	ptr1 = (uint8_t *) &d[0];
+	ptr2 = (uint8_t *) &di[0];
+
+	micro_seconds = 0;
+	error = memmove_(ptr1, ptr2, 5000);
+}

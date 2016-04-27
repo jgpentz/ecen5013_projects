@@ -1,0 +1,4 @@
+#Sun Apr 03 10:39:52 MDT 2016
+__DEFAULT__=false
+org.eclipse.help.ui.localSearch.master=true
+expression=optimization

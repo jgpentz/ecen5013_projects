@@ -1,0 +1,12 @@
+/*
+ * timer.c
+ *
+ *  Created on: Feb 28, 2016
+ *      Author: jimmy
+ */
+
+#include "timer.h"
+
+void timer_init(){
+
+}

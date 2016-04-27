@@ -1,0 +1,15 @@
+15:34:34 **** Incremental Build of configuration Debug for project itoa_ftoa ****
+make all 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"../Sources" -I"../Includes" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+Finished building: ../Sources/main.c
+ 
+Building target: itoa_ftoa.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "MKL25Z128xxx4_flash.ld" -Xlinker --gc-sections -L"/home/jimmy/ecen5013_projects/project3-kds/itoa_ftoa/Project_Settings/Linker_Files" -Wl,-Map,"itoa_ftoa.map" -specs=nano.specs -specs=nosys.specs -o "itoa_ftoa.elf"  ./Sources/main.o  ./Project_Settings/Startup_Code/startup_MKL25Z4.o ./Project_Settings/Startup_Code/system_MKL25Z4.o   
+Finished building target: itoa_ftoa.elf
+ 
+
+15:34:35 Build Finished (took 366ms)
+

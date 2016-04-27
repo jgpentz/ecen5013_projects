@@ -1,0 +1,6 @@
+11:31:43 **** Incremental Build of configuration Debug for project led_fader ****
+make all 
+make: Nothing to be done for `all'.
+
+11:31:43 Build Finished (took 114ms)
+

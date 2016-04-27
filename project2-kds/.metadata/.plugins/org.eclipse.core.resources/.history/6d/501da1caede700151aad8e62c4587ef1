@@ -1,0 +1,62 @@
+#include "MKL25Z4.h"
+#include "ports.h"
+#include "timer.h"
+#include "sine_table.h"
+//#include "mcg.h"
+
+static int redled_cnt = 0;
+static int greenled_cnt = 244;
+static int blueled_cnt = 122;
+
+int main(void)
+{
+	timer_init();
+	portb_setup();
+	//pll_init(8000000, LOW_POWER, CRYSTAL, 4, 24, MCGOUT);
+
+	//__enable_irq();
+	//NVIC_SetPendingIRQ(TPM2_IRQn);
+
+	// loop forever
+	volatile uint16_t count;
+	while(1){
+		count = TPM2_BASE_PTR->CNT;
+	}
+    return 0;
+}
+
+extern void TPM0_IRQHandler(){
+	// clear interrupt
+	__disable_irq();
+	TPM0_SC |= TPM_SC_TOF_MASK;
+
+	// check if index has reached the end of the sinewave_data array
+	if(blueled_cnt == 512)
+		blueled_cnt = 0;
+
+	// assign output led colors
+	TPM0_C1V = sinewave_data[blueled_cnt];
+
+	blueled_cnt++;
+	__enable_irq();
+}
+
+extern void TPM2_IRQHandler(){
+	// clear interrupt
+	__disable_irq();
+	TPM2_SC |= TPM_SC_TOF_MASK;
+
+	// check if index has reached the end of the sinewave_data array
+	if(redled_cnt == 512)
+		redled_cnt = 0;
+	if(greenled_cnt == 512)
+		greenled_cnt =0;
+
+	// assign output led colors
+	TPM2_C0V = sinewave_data[redled_cnt];
+	TPM2_C1V = sinewave_data[greenled_cnt];
+
+	redled_cnt++;
+	greenled_cnt++;
+	__enable_irq();
+}

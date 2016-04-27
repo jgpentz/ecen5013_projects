@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;dma_profiler/Sources/dma.h&apos;" deleteContents="false" description="Delete resource &apos;dma_profiler/Sources/dma.h&apos;" element1="/dma_profiler/Sources/dma.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1457973671199"/>&#x0A;<refactoring comment="Delete resource &apos;dma_profiler/Sources/dma.c&apos;" deleteContents="false" description="Delete resource &apos;dma_profiler/Sources/dma.c&apos;" element1="/dma_profiler/Sources/dma.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1457973674333"/>
+</session>

@@ -1,0 +1,67 @@
+/*
+ * profiler.c
+ *
+ *  Created on: Mar 13, 2016
+ *      Author: jimmy
+ */
+#include "profiler.h"
+
+uint8_t * ptr1;
+uint8_t * ptr2;
+int8_t error;
+int i;
+static volatile uint8_t micro_seconds;
+
+uint8_t profiler(){
+
+	src_arrays_t src_arrays;
+	dst_arrays_t dst_arrays;
+
+	// fill up all 4 arrays with 0xaa bytes
+	for(i = 0; i < 5000; i++){
+		if(i < 10)
+			src_arrays.a[i] = 0xaa;
+		if(i < 100)
+			src_arrays.b[i] = 0xaa;
+		if(i < 1000)
+			src_arrays.c[i] = 0xaa;
+		src_arrays.d[i] = 0xaa;
+	}
+
+	// loop through arrays for each function
+	ptr1 = (uint8_t *) &src_arrays.a[0];
+	ptr2 = (uint8_t *) &dst_arrays.ai[0];
+
+	micro_seconds = 0;
+	error = memmove_(ptr1, ptr2, 10);
+	ptr2 = (uint8_t *) &dst_arrays.ai[0];
+	micro_seconds = 0;
+	memzero(ptr2, 11);
+
+	ptr1 = (uint8_t *) &src_arrays.b[0];
+	ptr2 = (uint8_t *) &dst_arrays.bi[0];
+
+	micro_seconds = 0;
+	memmove_(ptr1, ptr2, 100);
+	micro_seconds = 0;
+	memzero(ptr2, 101);
+
+	ptr1 = (uint8_t *) &src_arrays.c[0];
+	ptr2 = (uint8_t *) &dst_arrays.ci[0];
+
+	micro_seconds = 0;
+	memmove_(ptr1, ptr2, 1000);
+	micro_seconds = 0;
+	memzero(ptr2, 1001);
+
+	ptr1 = (uint8_t *) &src_arrays.d[0];
+	ptr2 = (uint8_t *) &dst_arrays.di[0];
+
+	micro_seconds = 0;
+	memmove_(ptr1, ptr2, 5000);
+	micro_seconds = 0;
+	memzero(ptr2, 5001);
+	micro_seconds = 0;
+
+	return 0;
+}

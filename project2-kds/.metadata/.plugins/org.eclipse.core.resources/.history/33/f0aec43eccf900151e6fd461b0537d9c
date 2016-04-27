@@ -1,0 +1,42 @@
+#include "MKL25Z4.h"
+
+int32_t myGlobal;
+int8_t myint;
+int32_t myVar = 0x12345678;
+const uint32_t const_var = 0x1337;
+
+struct foo {
+	uint8_t c;			// 1 byte
+	uint8_t pad[4];		// 4 bytes
+	uint8_t *p;			// 4 bytes
+	uint32_t x;			// 4 bytes
+}__attribute__((packed));
+
+struct foo1 {
+	uint8_t c;			// 1 byte
+	uint8_t pad[4];		// 4 bytes
+	uint8_t *p;			// 4 bytes
+	uint32_t x;			// 4 bytes
+}__attribute__((packed, aligned(2)));
+
+struct foo structy;
+struct foo1 structyy;
+
+int main(void)
+{
+	static uint32_t i;
+	static uint32_t j;
+	// loop forever
+	i = 0;
+	j = 0;
+
+	while(1){
+		i++;
+		i = i+j;
+	}
+    return 0;
+}
+
+void foo(void){
+
+}

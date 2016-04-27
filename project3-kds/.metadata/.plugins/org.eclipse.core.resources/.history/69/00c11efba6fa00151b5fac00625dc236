@@ -1,0 +1,9 @@
+#include "MKL25Z4.h"
+
+static int i = 0;
+
+int main(void)
+{
+    /* Never leave main */
+    return 0;
+}

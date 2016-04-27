@@ -1,0 +1,26 @@
+/*
+ * profiler.h
+ *
+ *  Created on: Mar 13, 2016
+ *      Author: jimmy
+ */
+
+#ifndef SOURCES_PROFILER_H_
+#define SOURCES_PROFILER_H_
+
+#include "MKL25Z4.h"
+#include "memory.h"
+#include <stdint.h>
+//#include <stdlib.h>
+
+/*typedef struct{
+	uint8_t a[5000];
+} src_arrays_t;
+
+typedef struct{
+	uint8_t ai[5000];
+} dst_arrays_t;*/
+
+void profiler();
+
+#endif /* SOURCES_PROFILER_H_ */

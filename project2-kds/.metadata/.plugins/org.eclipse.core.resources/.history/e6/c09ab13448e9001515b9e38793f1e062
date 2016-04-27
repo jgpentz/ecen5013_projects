@@ -1,0 +1,48 @@
+/*
+ * profiler.c
+ *
+ *  Created on: Mar 13, 2016
+ *      Author: jimmy
+ */
+#include "profiler.h"
+
+uint8_t a[10];
+uint8_t ai[10];
+uint8_t b[100];
+uint8_t bi[100];
+uint8_t c[1000];
+uint8_t ci[1000];
+uint8_t d[5000];
+uint8_t di[5000];
+uint8_t * ptr1;
+uint8_t * ptr2;
+uint8_t error;
+int i;
+
+
+uint8_t profiler(volatile uint8_t micro_seconds){
+
+	src_arrays_t src_arrays;
+	dst_arrays_t dst arrays;
+
+	// fill up all 4 arrays with 0xaa bytes
+	for(i = 0; i < 5000; i++){
+		if(i < 10)
+			a[i] = 0xaa;
+		if(i < 100)
+			b[i] = 0xaa;
+		if(i < 1000)
+			c[i] = 0xaa;
+		d[i] = 0xaa;
+	}
+
+	// loop through arrays for each function
+	for(i = 0; i < 3; i++){
+		ptr 1 = (uint8_t *)
+	}
+	ptr1 = (uint8_t *) &d[0];
+	ptr2 = (uint8_t *) &di[0];
+
+	micro_seconds = 0;
+	error = memmove_(ptr1, ptr2, 5000);
+}

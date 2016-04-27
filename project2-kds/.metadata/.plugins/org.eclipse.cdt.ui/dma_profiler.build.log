@@ -1,0 +1,27 @@
+11:47:14 **** Incremental Build of configuration Debug for project dma_profiler ****
+make all 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"../Sources" -I"../Includes" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+Finished building: ../Sources/main.c
+ 
+Building file: ../Sources/mcg.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"../Sources" -I"../Includes" -std=c99 -MMD -MP -MF"Sources/mcg.d" -MT"Sources/mcg.o" -c -o "Sources/mcg.o" "../Sources/mcg.c"
+Finished building: ../Sources/mcg.c
+ 
+Building file: ../Sources/memory.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"../Sources" -I"../Includes" -std=c99 -MMD -MP -MF"Sources/memory.d" -MT"Sources/memory.o" -c -o "Sources/memory.o" "../Sources/memory.c"
+../Sources/memory.c: In function 'memcpy_':
+../Sources/memory.c:66:5: error: 'DMA' undeclared (first use in this function)
+     DMA
+     ^
+../Sources/memory.c:66:5: note: each undeclared identifier is reported only once for each function it appears in
+../Sources/memory.c:68:5: error: expected ';' before 'return'
+     return stat=PASS;
+     ^
+make: *** [Sources/memory.o] Error 1
+
+11:47:15 Build Finished (took 1s.118ms)
+

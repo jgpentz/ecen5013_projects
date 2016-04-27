@@ -1,0 +1,62 @@
+11:31:15 **** Incremental Build of configuration Debug for project led_fader ****
+make all 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"../Sources" -I"../Includes" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+Finished building: ../Sources/main.c
+ 
+Building file: ../Sources/memory.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"../Sources" -I"../Includes" -std=c99 -MMD -MP -MF"Sources/memory.d" -MT"Sources/memory.o" -c -o "Sources/memory.o" "../Sources/memory.c"
+../Sources/memory.c: In function 'memcpy_':
+../Sources/memory.c:62:14: warning: assignment makes integer from pointer without a cast [enabled by default]
+     DMA_SAR0 = src;
+              ^
+../Sources/memory.c:63:14: warning: assignment makes integer from pointer without a cast [enabled by default]
+     DMA_DAR0 = dst;
+              ^
+Finished building: ../Sources/memory.c
+ 
+Building file: ../Sources/ports.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"../Sources" -I"../Includes" -std=c99 -MMD -MP -MF"Sources/ports.d" -MT"Sources/ports.o" -c -o "Sources/ports.o" "../Sources/ports.c"
+Finished building: ../Sources/ports.c
+ 
+Building file: ../Sources/profiler.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"../Sources" -I"../Includes" -std=c99 -MMD -MP -MF"Sources/profiler.d" -MT"Sources/profiler.o" -c -o "Sources/profiler.o" "../Sources/profiler.c"
+../Sources/profiler.c: In function 'profiler':
+../Sources/profiler.c:29:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  ptr1 = (uint8_t *) a[0];
+         ^
+../Sources/profiler.c:30:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  ptr2 = (uint8_t *) ai[0];
+         ^
+Finished building: ../Sources/profiler.c
+ 
+Building file: ../Sources/timer.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"../Sources" -I"../Includes" -std=c99 -MMD -MP -MF"Sources/timer.d" -MT"Sources/timer.o" -c -o "Sources/timer.o" "../Sources/timer.c"
+Finished building: ../Sources/timer.c
+ 
+Building file: ../Project_Settings/Startup_Code/startup_MKL25Z4.S
+Invoking: Cross ARM GNU Assembler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -x assembler-with-cpp -MMD -MP -MF"Project_Settings/Startup_Code/startup_MKL25Z4.d" -MT"Project_Settings/Startup_Code/startup_MKL25Z4.o" -c -o "Project_Settings/Startup_Code/startup_MKL25Z4.o" "../Project_Settings/Startup_Code/startup_MKL25Z4.S"
+Finished building: ../Project_Settings/Startup_Code/startup_MKL25Z4.S
+ 
+Building file: ../Project_Settings/Startup_Code/system_MKL25Z4.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"../Sources" -I"../Includes" -std=c99 -MMD -MP -MF"Project_Settings/Startup_Code/system_MKL25Z4.d" -MT"Project_Settings/Startup_Code/system_MKL25Z4.o" -c -o "Project_Settings/Startup_Code/system_MKL25Z4.o" "../Project_Settings/Startup_Code/system_MKL25Z4.c"
+Finished building: ../Project_Settings/Startup_Code/system_MKL25Z4.c
+ 
+Building target: led_fader.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "MKL25Z128xxx4_flash.ld" -Xlinker --gc-sections -L"/home/jimmy/ecen5013_projects/project2-kds/led_fader/Project_Settings/Linker_Files" -Wl,-Map,"led_fader.map" -specs=nano.specs -specs=nosys.specs -o "led_fader.elf"  ./Sources/dma.o ./Sources/main.o ./Sources/mcg.o ./Sources/memory.o ./Sources/ports.o ./Sources/profiler.o ./Sources/timer.o  ./Project_Settings/Startup_Code/startup_MKL25Z4.o ./Project_Settings/Startup_Code/system_MKL25Z4.o   
+Finished building target: led_fader.elf
+ 
+11:31:21 **** Incremental Build of configuration Debug for project led_fader ****
+make all 
+make: Nothing to be done for `all'.
+11:31:43 **** Incremental Build of configuration Debug for project led_fader ****
+make all 
+make: Nothing to be done for `all'.
