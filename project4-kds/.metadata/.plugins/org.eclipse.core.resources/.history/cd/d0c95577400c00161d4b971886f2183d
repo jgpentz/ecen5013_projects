@@ -1,0 +1,29 @@
+// James Pentz
+
+#include "MKL25Z4.h"
+#include "spi.h"
+#include "nRF24L01.h"
+
+static int i = 0;
+
+int main(void)
+{
+	uint8_t config_stuff[5], randoms;
+
+	spi_init();
+
+	config_stuff = {NORDIC_WR_REG | NORDIC_CONFIG_REG, NORDIC_PWR_UP | NORDIC_PRIM_RX, 0, 0, 0};
+
+    for (;;) {
+    	if(i == 1000000){
+    		//write_config(config_stuff);
+    		//config_stuff = 0x00;
+    		//read_config(&config_stuff);
+    		randoms = SPI_send(config_stuff);
+    		randoms = SPI_send(NORDIC_RD_REG | NORDIC_CONFIG_REG)
+    	}
+         i++;
+    }
+
+    return 0;
+}

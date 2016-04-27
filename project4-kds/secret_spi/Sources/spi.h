@@ -14,6 +14,4 @@ void spi_init(void);
 void spi_send_byte(uint8_t data);
 void spi_receive_byte(uint8_t * data);
 
-
-
 #endif /* SOURCES_SPI_H_ */
