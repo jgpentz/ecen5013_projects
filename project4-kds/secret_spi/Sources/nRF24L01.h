@@ -14,6 +14,7 @@
 #define NORDIC_CONFIG_REG 0x00
 #define NORDIC_RF_SETUP_REG 0x06
 #define NORDIC_STATUS_REG 0x07
+#define NORDIC_STATUS_NOP 0xff
 #define NORDIC_TX_ADDR 0x10
 #define NORDIC_FIFO_STATUS_REG 0x17
 #define NORDIC_RX_PAYLOAD 0x61
@@ -26,7 +27,14 @@
 #define NORDIC_PRIM_TX 0x00
 #define DUMMY_BYTE 0x00
 
+// Function declarations
 void write_config(uint8_t config_command);
 void read_config(uint8_t * config_data);
+void read_status(uint8_t * status_data);
+void read_fifo(uint8_t * fifo_data);
+void read_rf_setup(uint8_t * rf_setup_data);
+void write_rf_setup(uint8_t rf_setup_command);
+void write_tx_addr(uint8_t *addr_data);
+void read_tx_addr(uint8_t *addr_data);
 
 #endif /* SOURCES_NRF24L01_H_ */

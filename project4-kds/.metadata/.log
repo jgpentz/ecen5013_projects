@@ -595,3 +595,48 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64 -product com.somniumtech
 
 !ENTRY org.eclipse.ui 4 4 2016-04-27 00:29:53.451
 !MESSAGE Could not retrieve EHandlerService or ICommandService from context evaluation context fororg.eclipse.linuxtools.systemtap.ui.ide.RunScriptCommand
+!SESSION 2016-04-27 11:54:32.876 -----------------------------------------------
+eclipse.buildId=3.0.0.
+java.version=1.7.0_76
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product com.somniumtech.branding.kds.ide
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product com.somniumtech.branding.kds.ide
+
+!ENTRY com.processorexpert.core.ide.wizard.ui 2 0 2016-04-27 11:55:35.709
+!MESSAGE External elements location /opt/Freescale/KDS_3.0.0/eclipse/ProcessorExpert/BoardConfigurations/wizard_data does not exist
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag 4 0 2016-04-27 12:10:06.547
+!MESSAGE OpenOCD failed with code (127).
+
+For more details, see the openocd console.
+!SESSION 2016-04-27 15:15:22.613 -----------------------------------------------
+eclipse.buildId=3.0.0.
+java.version=1.7.0_76
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product com.somniumtech.branding.kds.ide
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product com.somniumtech.branding.kds.ide
+
+!ENTRY com.processorexpert.core.ide.wizard.ui 2 0 2016-04-27 15:16:30.422
+!MESSAGE External elements location /opt/Freescale/KDS_3.0.0/eclipse/ProcessorExpert/BoardConfigurations/wizard_data does not exist
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag 4 0 2016-04-27 15:57:25.883
+!MESSAGE OpenOCD failed with code (127).
+
+For more details, see the openocd console.
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag 4 0 2016-04-27 15:57:29.589
+!MESSAGE OpenOCD failed with code (127).
+
+For more details, see the openocd console.
+!SESSION 2016-04-28 15:56:44.905 -----------------------------------------------
+eclipse.buildId=3.0.0.
+java.version=1.7.0_76
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product com.somniumtech.branding.kds.ide
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product com.somniumtech.branding.kds.ide
+
+!ENTRY com.processorexpert.core.ide.wizard.ui 2 0 2016-04-28 15:58:17.152
+!MESSAGE External elements location /opt/Freescale/KDS_3.0.0/eclipse/ProcessorExpert/BoardConfigurations/wizard_data does not exist

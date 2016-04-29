@@ -15,9 +15,9 @@ void spi_init(void){
 
 	PORTA_PCR16 = PORT_PCR_MUX(1);		// Set PTA16 to alt 1 (GPIO) (CEN)
 
-	PORTD_PCR0 = PORT_PCR_MUX(1);		// Set PTD0 to alt 2 (SPI0_PCS0)
+	PORTD_PCR0 = PORT_PCR_MUX(1);		// Set PTD0 to alt 1 (SPI0_PCS0)
 	FGPIOD_PDDR |= (1 << 0);			// Set PTA16 as GPIO Output
-	FGPIOD_PSOR |= (1 << 0);
+	FGPIOD_PSOR |= (1 << 0);			// Initialize pin to 1
 
 	PORTD_PCR1 = PORT_PCR_MUX(2);		// Set PTD1 to alt 2 (SPI0_SCK)
 	PORTD_PCR2 = PORT_PCR_MUX(2);		// Set PTD2 to alt 2 (SPI0_MOSI)
@@ -35,17 +35,23 @@ void spi_init(void){
 }
 
 // Write char to the SPI0 data register
-void spi_send_byte(uint8_t data){
-	while(!(SPI0_S & SPI_S_SPTEF_MASK)); // Wait until Transmit buffer is empty
+uint8_t spi_send_byte(uint8_t data){
+	uint8_t ret_data;
+	while(!(SPI0_S & SPI_S_SPTEF_MASK))  // Wait until Transmit buffer is empty
+		__asm("nop");
 	SPI0->D = data;						 // Transmit Data
+	while(!(SPI0_S & SPI_S_SPRF_MASK));  // Wait until Transmit buffer is empty
+	ret_data = SPI0->D;
+	return ret_data;
 }
 
 // Read char from the SPI0 data register
 void spi_receive_byte(uint8_t * data){
-	while(!(SPI0_S & SPI_S_SPTEF_MASK)); 				   // Wait until Transmit buffer is empty
+	while(!(SPI0_S & SPI_S_SPTEF_MASK)) 				   // Wait until Transmit buffer is empty
+		__asm("nop");
 	SPI0->D = 0xff;										   // Transmit dummy data
-	while((SPI0->S & SPI_S_SPRF_MASK) != SPI_S_SPRF_MASK); // Wait until Receive buffer is full
-	* data = SPI0->D;									   // Read data
+	while((SPI0->S & SPI_S_SPRF_MASK) != SPI_S_SPRF_MASK)  // Wait until Receive buffer is full
+		__asm("nop");
+	*data = SPI0->D;									   // Read data
 
 }
-
