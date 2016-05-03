@@ -640,3 +640,16 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64 -product com.somniumtech
 
 !ENTRY com.processorexpert.core.ide.wizard.ui 2 0 2016-04-28 15:58:17.152
 !MESSAGE External elements location /opt/Freescale/KDS_3.0.0/eclipse/ProcessorExpert/BoardConfigurations/wizard_data does not exist
+!SESSION 2016-04-29 18:12:26.274 -----------------------------------------------
+eclipse.buildId=3.0.0.
+java.version=1.7.0_76
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product com.somniumtech.branding.kds.ide
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product com.somniumtech.branding.kds.ide
+
+!ENTRY org.eclipse.core.resources 2 10035 2016-04-29 18:12:39.067
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.processorexpert.core.ide.wizard.ui 2 0 2016-04-29 18:13:14.526
+!MESSAGE External elements location /opt/Freescale/KDS_3.0.0/eclipse/ProcessorExpert/BoardConfigurations/wizard_data does not exist
