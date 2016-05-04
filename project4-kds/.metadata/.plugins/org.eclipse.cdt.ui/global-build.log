@@ -1,4 +1,14 @@
-14:51:47 **** Incremental Build of configuration Debug for project secret_spi ****
+16:37:02 **** Incremental Build of configuration Debug for project secret_spi ****
+make all 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"../Sources" -I"../Includes" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+../Sources/main.c: In function 'main':
+../Sources/main.c:46:16: error: expected expression before '/' token
+  delay_func();*/
+                ^
+make: *** [Sources/main.o] Error 1
+16:37:30 **** Incremental Build of configuration Debug for project secret_spi ****
 make all 
 Building file: ../Sources/main.c
 Invoking: Cross ARM C Compiler
@@ -10,61 +20,3 @@ Invoking: Cross ARM C++ Linker
 arm-none-eabi-g++ -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "MKL25Z128xxx4_flash.ld" -Xlinker --gc-sections -L"/home/jimmy/ecen5013_projects/project4-kds/secret_spi/Project_Settings/Linker_Files" -Wl,-Map,"secret_spi.map" -specs=nano.specs -specs=nosys.specs -o "secret_spi.elf"  ./Sources/main.o ./Sources/nRF24L01.o ./Sources/spi.o  ./Project_Settings/Startup_Code/startup_MKL25Z4.o ./Project_Settings/Startup_Code/system_MKL25Z4.o   
 Finished building target: secret_spi.elf
  
-14:51:51 **** Incremental Build of configuration Debug for project secret_spi ****
-make all 
-make: Nothing to be done for `all'.
-14:55:06 **** Incremental Build of configuration Debug for project secret_spi ****
-make all 
-make: Nothing to be done for `all'.
-14:56:46 **** Incremental Build of configuration Debug for project secret_spi ****
-make all 
-Building file: ../Sources/main.c
-Invoking: Cross ARM C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"../Sources" -I"../Includes" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
-Finished building: ../Sources/main.c
- 
-Building target: secret_spi.elf
-Invoking: Cross ARM C++ Linker
-arm-none-eabi-g++ -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "MKL25Z128xxx4_flash.ld" -Xlinker --gc-sections -L"/home/jimmy/ecen5013_projects/project4-kds/secret_spi/Project_Settings/Linker_Files" -Wl,-Map,"secret_spi.map" -specs=nano.specs -specs=nosys.specs -o "secret_spi.elf"  ./Sources/main.o ./Sources/nRF24L01.o ./Sources/spi.o  ./Project_Settings/Startup_Code/startup_MKL25Z4.o ./Project_Settings/Startup_Code/system_MKL25Z4.o   
-Finished building target: secret_spi.elf
- 
-15:02:05 **** Incremental Build of configuration Debug for project secret_spi ****
-make all 
-Building file: ../Sources/main.c
-Invoking: Cross ARM C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"../Sources" -I"../Includes" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
-Finished building: ../Sources/main.c
- 
-Building target: secret_spi.elf
-Invoking: Cross ARM C++ Linker
-arm-none-eabi-g++ -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "MKL25Z128xxx4_flash.ld" -Xlinker --gc-sections -L"/home/jimmy/ecen5013_projects/project4-kds/secret_spi/Project_Settings/Linker_Files" -Wl,-Map,"secret_spi.map" -specs=nano.specs -specs=nosys.specs -o "secret_spi.elf"  ./Sources/main.o ./Sources/nRF24L01.o ./Sources/spi.o  ./Project_Settings/Startup_Code/startup_MKL25Z4.o ./Project_Settings/Startup_Code/system_MKL25Z4.o   
-Finished building target: secret_spi.elf
- 
-18:13:26 **** Incremental Build of configuration Debug for project secret_spi ****
-make all 
-Building file: ../Sources/main.c
-Invoking: Cross ARM C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"../Sources" -I"../Includes" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
-Finished building: ../Sources/main.c
- 
-Building file: ../Sources/nRF24L01.c
-Invoking: Cross ARM C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"../Sources" -I"../Includes" -std=c99 -MMD -MP -MF"Sources/nRF24L01.d" -MT"Sources/nRF24L01.o" -c -o "Sources/nRF24L01.o" "../Sources/nRF24L01.c"
-Finished building: ../Sources/nRF24L01.c
- 
-Building file: ../Sources/spi.c
-Invoking: Cross ARM C Compiler
-arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"../Sources" -I"../Includes" -std=c99 -MMD -MP -MF"Sources/spi.d" -MT"Sources/spi.o" -c -o "Sources/spi.o" "../Sources/spi.c"
-Finished building: ../Sources/spi.c
- 
-Building target: secret_spi.elf
-Invoking: Cross ARM C++ Linker
-arm-none-eabi-g++ -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "MKL25Z128xxx4_flash.ld" -Xlinker --gc-sections -L"/home/jimmy/ecen5013_projects/project4-kds/secret_spi/Project_Settings/Linker_Files" -Wl,-Map,"secret_spi.map" -specs=nano.specs -specs=nosys.specs -o "secret_spi.elf"  ./Sources/main.o ./Sources/nRF24L01.o ./Sources/spi.o  ./Project_Settings/Startup_Code/startup_MKL25Z4.o ./Project_Settings/Startup_Code/system_MKL25Z4.o   
-Finished building target: secret_spi.elf
- 
-18:13:38 **** Incremental Build of configuration Debug for project secret_spi ****
-make all 
-make: Nothing to be done for `all'.
-18:14:04 **** Incremental Build of configuration Debug for project secret_spi ****
-make all 
-make: Nothing to be done for `all'.

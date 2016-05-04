@@ -4,6 +4,8 @@
 #include "spi.h"
 #include "nRF24L01.h"
 
+#define TX_PAYLOAD_LENGTH 1
+
 static int i = 0;
 
 
@@ -22,16 +24,41 @@ int main(void)
 {
 	uint8_t config_stuff, rf_config;
 	uint8_t tx_addr[5] = {0x00, 0xaa, 0x00, 0xaa, 0x00};
+	uint8_t tx_payload_data[1] = {0x55};
 
 	spi_init();
 
 	config_stuff = NORDIC_PWR_UP | NORDIC_PRIM_RX;
-	rf_config = 0x02;
+	rf_config = 0x06;
 
 
 	write_config(config_stuff);
+	delay_func();
+	flush_tx();
+	delay_func();
+	/*write_rf_setup(rf_config);
+	delay_func();
+	write_tx_addr(&tx_addr[0]);
+	delay_func();
+	read_fifo(&config_stuff);
+	delay_func();
+	write_tx_payload(&tx_payload_data[0], TX_PAYLOAD_LENGTH);
+	delay_func();*/
+
+	/*read_fifo(&config_stuff);
+	delay_func();
+	transmit_payload();
+	read_fifo(&config_stuff);
+	delay_func();*/
 
     for (;;) {
+    	/*//read_status(&config_stuff);
+    	//delay_func();
+		read_fifo(&config_stuff);
+		delay_func();
+    	read_status(&config_stuff);
+    	delay_func();*/
+
 		delay_func();
 		read_config(&config_stuff);
 		delay_func();

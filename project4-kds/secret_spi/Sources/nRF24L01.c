@@ -67,10 +67,8 @@ void write_tx_addr(uint8_t *addr_data){
 
 	FGPIOD_PCOR |= (1<<0);
 	spi_send_byte(NORDIC_WR_REG | NORDIC_TX_ADDR);	// Initiate a write to tx_addr reg
-	for(i=0;i<5;i++){
-		spi_send_byte((uint8_t)*addr_data);
-		addr_data++;
-	}
+	for(i=0;i<5;i++)
+		spi_send_byte(addr_data[i]);
 	FGPIOD_PSOR |= (1<<0);
 }
 
@@ -93,9 +91,24 @@ void write_tx_payload(uint8_t *tx_data, int length){
 
 	FGPIOD_PCOR |= (1<<0);
 	spi_send_byte(NORDIC_TX_PAYLOAD);
-	for(i=0;i<length;i++){
+	for(i=0;i<length;i++)
 		spi_send_byte(tx_data[i]);
-		tx_data++;
-	}
 	FGPIOD_PSOR |= (1<<0);
+}
+
+void flush_tx(void){
+	FGPIOD_PCOR |= (1<<0);
+	spi_send_byte(NORDIC_TX_FLUSH);	// Initiate a write to the config reg
+	FGPIOD_PSOR |= (1<<0);
+}
+
+void transmit_payload(void){
+	FGPIOA_PSOR |= (1<<16);
+	delay(100000);
+	FGPIOA_PCOR |= (1<<16);
+}
+
+void delay(int cycles){
+	while(cycles--)
+		__asm("nop");
 }

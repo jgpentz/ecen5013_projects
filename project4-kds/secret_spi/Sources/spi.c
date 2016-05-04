@@ -16,14 +16,15 @@ void spi_init(void){
 	PORTA_PCR16 = PORT_PCR_MUX(1);		// Set PTA16 to alt 1 (GPIO) (CEN)
 
 	PORTD_PCR0 = PORT_PCR_MUX(1);		// Set PTD0 to alt 1 (SPI0_PCS0)
-	FGPIOD_PDDR |= (1 << 0);			// Set PTA16 as GPIO Output
+	FGPIOD_PDDR |= (1 << 0);			// Set PTD0 as GPIO Output
 	FGPIOD_PSOR |= (1 << 0);			// Initialize pin to 1
 
 	PORTD_PCR1 = PORT_PCR_MUX(2);		// Set PTD1 to alt 2 (SPI0_SCK)
 	PORTD_PCR2 = PORT_PCR_MUX(2);		// Set PTD2 to alt 2 (SPI0_MOSI)
 	PORTD_PCR3 = PORT_PCR_MUX(2);		// Set PTD3 to alt 2 (SPI0_MISO)
 
-	GPIOA->PDDR = (1 << 16);			// Set PTA16 as GPIO Output
+	FGPIOA->PDDR = (1 << 16);			// Set PTA16 as GPIO Output
+	FGPIOA->PCOR = (1 << 16);
 
 
 	SPI0->C1 = SPI_C1_MSTR_MASK; // Set SPI0 as master and configure auto-SS

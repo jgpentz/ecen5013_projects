@@ -36,5 +36,9 @@ void read_rf_setup(uint8_t * rf_setup_data);
 void write_rf_setup(uint8_t rf_setup_command);
 void write_tx_addr(uint8_t *addr_data);
 void read_tx_addr(uint8_t *addr_data);
+void write_tx_payload(uint8_t *tx_data, int length);
+void flush_tx(void);
+void transmit_payload(void);
+void delay(int cycles);
 
 #endif /* SOURCES_NRF24L01_H_ */
