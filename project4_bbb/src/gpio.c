@@ -111,10 +111,10 @@ int gpio_unexport(unsigned int gpio)
  ****************************************************************/
 int gpio_set_dir(unsigned int gpio, unsigned int out_flag)
 {
-    int fd, len;
+    int fd;
     char buf[MAX_BUF];
 
-    len = snprintf(buf, sizeof(buf), SYSFS_GPIO_DIR  "/gpio%d/direction", gpio);
+    snprintf(buf, sizeof(buf), SYSFS_GPIO_DIR  "/gpio%d/direction", gpio);
 
     fd = open(buf, O_WRONLY);
     if (fd < 0) {
@@ -136,10 +136,10 @@ int gpio_set_dir(unsigned int gpio, unsigned int out_flag)
  ****************************************************************/
 int gpio_set_value(unsigned int gpio, unsigned int value)
 {
-    int fd, len;
+    int fd;
     char buf[MAX_BUF];
 
-    len = snprintf(buf, sizeof(buf), SYSFS_GPIO_DIR "/gpio%d/value", gpio);
+    snprintf(buf, sizeof(buf), SYSFS_GPIO_DIR "/gpio%d/value", gpio);
 
     fd = open(buf, O_WRONLY);
     if (fd < 0) {
@@ -161,10 +161,10 @@ int gpio_set_value(unsigned int gpio, unsigned int value)
  ****************************************************************/
 int gpio_get_value(unsigned int gpio, unsigned int *value)
 {
-    int fd, len;
+    int fd;
     char buf[MAX_BUF];
 
-    len = snprintf(buf, sizeof(buf), SYSFS_GPIO_DIR "/gpio%d/value", gpio);
+    snprintf(buf, sizeof(buf), SYSFS_GPIO_DIR "/gpio%d/value", gpio);
 
     fd = open(buf, O_RDONLY);
     if (fd < 0) {
@@ -199,10 +199,10 @@ int gpio_get_value_fd(int fd, unsigned int *value)
 
 int gpio_set_edge(unsigned int gpio, const char *edge)
 {
-    int fd, len;
+    int fd;
     char buf[MAX_BUF];
 
-    len = snprintf(buf, sizeof(buf), SYSFS_GPIO_DIR "/gpio%d/edge", gpio);
+    snprintf(buf, sizeof(buf), SYSFS_GPIO_DIR "/gpio%d/edge", gpio);
 
     fd = open(buf, O_WRONLY);
     if (fd < 0) {
@@ -221,10 +221,10 @@ int gpio_set_edge(unsigned int gpio, const char *edge)
 
 int gpio_fd_open(unsigned int gpio)
 {
-    int fd, len;
+    int fd;
     char buf[MAX_BUF];
 
-    len = snprintf(buf, sizeof(buf), SYSFS_GPIO_DIR "/gpio%d/value", gpio);
+    snprintf(buf, sizeof(buf), SYSFS_GPIO_DIR "/gpio%d/value", gpio);
 
     fd = open(buf, O_RDONLY | O_NONBLOCK );
     if (fd < 0) {

@@ -2,7 +2,7 @@
 //
 // James Pentz & Zachary Vogel
 // ECEN 5013
-// 2/11/2016
+// 5/2/2016
 
 #include<stdio.h>
 #include<fcntl.h>
@@ -100,7 +100,7 @@ int main(){
       usleep(100000);  
 
       gpio_set_value(117,0);
-      transfer(fd, (unsigned char*) &rd_config_reg, (unsigned char*) &buf, 1);
+      transfer(fd, (unsigned char*) &rd_config_reg, (unsigned char*) &buf, 2);
       //transfer(fd, (unsigned char*) &dummy_data,(unsigned char*) &buf, 1);
       gpio_set_value(117,1); 
       printf("config reg maybe: %02x, %02x\n", buf[0], buf[1]); 
